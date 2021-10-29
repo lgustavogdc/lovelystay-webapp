@@ -11,6 +11,10 @@ export type HttpRequest<Body = any> = {
   params?: any
 }
 
-export interface HttpGet<Response> {
-  get: (getParams: Omit<HttpRequest, 'body'>) => Promise<HttpResponse<Response>>
+export interface HttpGet {
+  get: HttpGet.Signature
+}
+
+export namespace HttpGet {
+  export type Signature = <Response>(getParams: Omit<HttpRequest, 'body'>) => Promise<HttpResponse<Response>>
 }
