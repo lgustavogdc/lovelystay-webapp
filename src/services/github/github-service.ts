@@ -1,8 +1,8 @@
 import { GithubUser } from 'src/models/github'
 import { HttpGet } from '../protocols/api'
-import { GetGithubUsers } from '../protocols/github'
+import { GetGithubUser, GetGithubUsers } from '../protocols/github'
 
-export class GithubService implements GetGithubUsers {
+export class GithubService implements GetGithubUsers, GetGithubUser {
   constructor(private readonly httpService: HttpGet) {}
 
   async getUsers(username: string): Promise<GithubUser[]> {
@@ -12,6 +12,11 @@ export class GithubService implements GetGithubUsers {
       params: { q: queryFilter },
     })
 
+    return response.body
+  }
+
+  async getUser(username: string): Promise<GithubUser> {
+    const response = await this.httpService.get<GithubUser>({ url: `/users/${username}` })
     return response.body
   }
 }
