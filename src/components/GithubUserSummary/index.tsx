@@ -1,3 +1,4 @@
+import Avatar from '../Avatar'
 import * as S from './styles'
 
 export type GithubUserSummaryProps = {
@@ -10,7 +11,7 @@ export type GithubUserSummaryProps = {
 
 const GithubUserSummary = ({ username, name, email, onClick, avatar }: GithubUserSummaryProps) => (
   <S.Wrapper onClick={() => onClick && onClick()}>
-    {avatar && <S.Avatar src={avatar} alt={`avatar:${username}`} />}
+    {avatar && <Avatar image={avatar} alt={`avatar:${username}`} />}
     <S.Title>{name}</S.Title>
     <S.SubtitleWrapper>
       <S.Subtitle>{username}</S.Subtitle>
