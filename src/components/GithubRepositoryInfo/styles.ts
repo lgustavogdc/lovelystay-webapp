@@ -6,4 +6,6 @@ export const Wrapper = styled.div.attrs({
 
 export const RepositoryName = styled.h1``
 
-export const RepositoryDescription = styled.p``
+export const RepositoryDescription = styled.p.attrs({
+  'data-testid': 'GithubRepositoryDescription',
+})``
