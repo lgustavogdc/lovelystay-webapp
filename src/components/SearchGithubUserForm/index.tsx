@@ -12,7 +12,7 @@ const SearchGithubUserForm = ({ onSearchUser, onSearchUsers }: SearchGithubUserF
 
   return (
     <S.Wrapper>
-      <Input placeholder="Search..." onChange={(value) => setUserName(value)} initialValue={username} />
+      <Input placeholder="Search..." onChange={(value) => setUserName(value)} initialValue="" />
       <S.ButtonsWrapper>
         <S.SearchUsersButton onClick={() => onSearchUsers(username)}>Search users</S.SearchUsersButton>
         <S.SearchUserButton onClick={() => onSearchUser(username)}>Search user</S.SearchUserButton>

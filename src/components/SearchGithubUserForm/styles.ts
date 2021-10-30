@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import Button from '../Button'
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div.attrs({
+  'data-testid': 'SearchGithubUserFormWrapper',
+})``
 
 export const ButtonsWrapper = styled.div``
 
