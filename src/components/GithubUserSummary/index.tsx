@@ -10,12 +10,12 @@ export type GithubUserSummaryProps = {
 
 const GithubUserSummary = ({ username, name, email, onClick, avatar }: GithubUserSummaryProps) => (
   <S.Wrapper onClick={() => onClick && onClick()}>
-    <S.Avatar src={avatar} alt={`avatar:${username}`} />
+    {avatar && <S.Avatar src={avatar} alt={`avatar:${username}`} />}
     <S.Title>{name}</S.Title>
-    <S.Wrapper>
+    <S.SubtitleWrapper>
       <S.Subtitle>{username}</S.Subtitle>
       <S.Subtitle>{email}</S.Subtitle>
-    </S.Wrapper>
+    </S.SubtitleWrapper>
   </S.Wrapper>
 )
 
