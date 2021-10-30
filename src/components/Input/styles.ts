@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
-export const InputWrapper = styled.div<{ hasError: boolean }>``
+export const InputWrapper = styled.div.attrs({
+  'data-testid': 'InputWrapper',
+})<{ hasError: boolean }>``
 
-export const Input = styled.input`
+export const Input = styled.input.attrs({
+  'data-testid': 'Input',
+})`
   padding: 0.5em;
   margin: 0.5em;
   color: #878f9a;
