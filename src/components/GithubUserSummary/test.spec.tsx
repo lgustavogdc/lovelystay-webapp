@@ -29,7 +29,7 @@ describe('<GithubUserListItem />', () => {
   it('should render avatar component if avatar prop is passed', () => {
     const mockedAvatar = 'anyAvatar'
     render(<GithubUserSummary {...mockedGithubUserSummaryProps} avatar={mockedAvatar} />)
-    const avatar = screen.getByTestId('GithubUserSummaryAvatar')
+    const avatar = screen.getByTestId('Avatar')
 
     expect(avatar).toBeInTheDocument()
   })
