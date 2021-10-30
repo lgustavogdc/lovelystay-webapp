@@ -3,9 +3,9 @@ import * as S from './styles'
 export type CustomStyle = 'grid' | 'lines'
 export type ListProps = {
   nodes: React.ReactElement[]
-  style?: CustomStyle
+  customStyle?: CustomStyle
 }
 
-const List = ({ nodes, style = 'lines' }: ListProps) => <S.Wrapper customStyle={style}>{nodes}</S.Wrapper>
+const List = ({ nodes, customStyle = 'lines' }: ListProps) => <S.Wrapper customStyle={customStyle}>{nodes}</S.Wrapper>
 
 export default List
