@@ -3,14 +3,14 @@ import * as S from './styles'
 export type ButtonStyle = 'primary' | 'secondary'
 export type ButtonProps = {
   name?: string
-  label: string
+  children: string
   style?: ButtonStyle
   onClick?: () => void
 }
 
-const Button = ({ name, label, style = 'primary', onClick }: ButtonProps) => (
+const Button = ({ name, children, style = 'primary', onClick }: ButtonProps) => (
   <S.Button name={name} customStyle={style} onClick={() => onClick && onClick()}>
-    {label}
+    {children}
   </S.Button>
 )
 
