@@ -11,7 +11,7 @@ export type GithubUserInfoProps = {
 
 const GithubUserInfo = ({ avatar, name, username, totalRepositories }: GithubUserInfoProps) => (
   <S.Wrapper>
-    {avatar && <Avatar image={avatar} alt={`avatar:${username}`} style="large" />}
+    {avatar && <Avatar image={avatar} alt={`avatar:${username}`} customStyle="large" />}
     <GithubUserDescription name={name} username={username} totalRepositories={totalRepositories} />
   </S.Wrapper>
 )

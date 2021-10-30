@@ -4,12 +4,12 @@ export type ButtonStyle = 'primary' | 'secondary'
 export type ButtonProps = {
   name?: string
   children: string
-  style?: ButtonStyle
+  customStyle?: ButtonStyle
   onClick?: () => void
 }
 
-const Button = ({ name, children, style = 'primary', onClick }: ButtonProps) => (
-  <S.Button name={name} customStyle={style} onClick={() => onClick && onClick()}>
+const Button = ({ name, children, customStyle = 'primary', onClick }: ButtonProps) => (
+  <S.Button name={name} customStyle={customStyle} onClick={() => onClick && onClick()}>
     {children}
   </S.Button>
 )
