@@ -8,6 +8,7 @@ export type GithubRepositoryListProps = {
 
 const RepositoryList = ({ repositories }: GithubRepositoryListProps) => (
   <List
+    customStyle="grid"
     nodes={repositories.map(({ id, name, description }) => (
       <GithubRepositoryInfo key={id} name={name} description={description} />
     ))}
