@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import GithubUserList, { GithubUserListProps } from '.'
 
 const mockedGithubUserListProps: GithubUserListProps = {
-  users: [{ id: 1, login: 'anyLogin', name: 'anyName', email: 'anyEmail', avatar_url: 'anyUrl' }],
+  users: [{ id: 1, login: 'anyLogin', name: 'anyName', avatar_url: 'anyUrl' }],
   onSelectUser: jest.fn(),
 }
 describe('<GithubUserList />', () => {
