@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-
+import 'jest-styled-components'
 import Input, { InputProps } from '.'
 
 const mockedProps: InputProps = {
@@ -11,7 +11,7 @@ const mockedProps: InputProps = {
 }
 
 describe('<Input />', () => {
-  it('should render the input', () => {
+  it('should render the inpu t', () => {
     render(<Input {...mockedProps} />)
     const inputWrapper = screen.getByTestId('InputWrapper')
 
@@ -27,5 +27,14 @@ describe('<Input />', () => {
     userEvent.type(input, 'mocked text')
 
     expect(onChangeMocked).toHaveBeenCalledWith('mocked text')
+  })
+
+  it('should have different style if has an error', () => {
+    render(<Input {...mockedProps} error="anyError" />)
+    const input = screen.getByTestId('Input')
+    const errorWrapper = screen.getByTestId('InputErrorWrapper')
+
+    expect(input).toHaveStyleRule('border', '2px solid red')
+    expect(errorWrapper).toHaveStyleRule('color', 'red')
   })
 })
