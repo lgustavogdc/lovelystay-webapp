@@ -9,6 +9,7 @@ export const Button = styled.button.attrs({
   padding: 10px;
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
 
   ${({ customStyle }) => css`
     ${customStyle === 'primary' &&
