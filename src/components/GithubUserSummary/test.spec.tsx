@@ -4,10 +4,7 @@ import GithubUserSummary, { GithubUserSummaryProps } from '.'
 
 const mockedGithubUserSummaryProps: GithubUserSummaryProps = {
   username: 'anyUsername',
-  name: 'anyName',
-  email: 'anyEmail',
 }
-
 describe('<GithubUserListItem />', () => {
   it('should render the githubUserSummary', () => {
     render(<GithubUserSummary {...mockedGithubUserSummaryProps} />)
@@ -32,5 +29,13 @@ describe('<GithubUserListItem />', () => {
     const avatar = screen.getByTestId('Avatar')
 
     expect(avatar).toBeInTheDocument()
+  })
+
+  it('should render name if name prop is passed', () => {
+    const mockedName = 'anyName'
+    render(<GithubUserSummary {...mockedGithubUserSummaryProps} name={mockedName} />)
+    const name = screen.getByTestId('GithubUserSummarySubtitle')
+
+    expect(name).toBeInTheDocument()
   })
 })
