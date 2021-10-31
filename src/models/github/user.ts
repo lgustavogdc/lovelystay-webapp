@@ -6,7 +6,6 @@ export type GithubUser = {
   repos_url: string
   name: string
   location: string
-  email: string
   bio: string
   public_repos: number
 }
