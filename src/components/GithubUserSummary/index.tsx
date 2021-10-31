@@ -3,20 +3,16 @@ import * as S from './styles'
 
 export type GithubUserSummaryProps = {
   username: string
-  name: string
-  email: string
+  name?: string
   avatar?: string
   onClick?: () => void
 }
 
-const GithubUserSummary = ({ username, name, email, onClick, avatar }: GithubUserSummaryProps) => (
+const GithubUserSummary = ({ username, name, onClick, avatar }: GithubUserSummaryProps) => (
   <S.Wrapper onClick={() => onClick && onClick()}>
     {avatar && <Avatar image={avatar} alt={`avatar:${username}`} />}
-    <S.Title>{name}</S.Title>
-    <S.SubtitleWrapper>
-      <S.Subtitle>{username}</S.Subtitle>
-      <S.Subtitle>{email}</S.Subtitle>
-    </S.SubtitleWrapper>
+    <S.Title>{username}</S.Title>
+    {name && <S.Subtitle>{name}</S.Subtitle>}
   </S.Wrapper>
 )
 
