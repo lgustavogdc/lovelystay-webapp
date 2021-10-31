@@ -3,17 +3,23 @@ import { Repository } from 'src/models/github/repository'
 import { HttpGet } from '../protocols/api'
 import { GetGithubUser, GetGithubUsers, GetGithubUserRepositories } from '../protocols/github'
 
+type GithubHttpGetResponse = {
+  incomplete_results: boolean
+  items: GithubUser[]
+  total_count: number
+}
+
 export class GithubService implements GetGithubUsers, GetGithubUser, GetGithubUserRepositories {
   constructor(private readonly httpService: HttpGet) {}
 
-  async getUsers(username: string): Promise<GithubUser[]> {
+  async getUsers(username: string): Promise<GetGithubUsers.Response> {
     const queryFilter = `${username} in:login`
-    const response = await this.httpService.get<GithubUser[]>({
+    const response = await this.httpService.get<GithubHttpGetResponse>({
       url: '/search/users',
       params: { q: queryFilter },
     })
 
-    return response.body
+    return { users: response.body.items, total: response.body.total_count }
   }
 
   async getUser(username: string): Promise<GithubUser> {

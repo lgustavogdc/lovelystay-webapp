@@ -6,7 +6,7 @@ export interface GetGithubUsers {
 }
 export namespace GetGithubUsers {
   export type Params = string
-  export type Response = GithubUser[]
+  export type Response = { users: GithubUser[]; total: number }
 }
 
 export interface GetGithubUser {
