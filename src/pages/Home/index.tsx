@@ -1,26 +1,40 @@
 import { useState } from 'react'
 import GithubUserList from 'src/components/GithubUserList'
 import SearchGithubUserForm from 'src/components/SearchGithubUserForm'
-import { githubServiceFactory } from 'src/services/factories/github-service-factory'
 import { GithubUser } from 'src/models/github'
 import * as S from './styles'
+import { useHistory } from 'react-router'
+import { githubServiceFactory } from 'src/services/factories/github-service-factory'
 
 const Home = () => {
   const [githubUsers, setGithubUsers] = useState<GithubUser[]>([])
+  const history = useHistory()
+
+  const navigate = (route: string) => {
+    history.push(route)
+  }
+
+  const selectUser = () => {
+    navigate('/user')
+  }
 
   const searchUser = async (username: string) => {
     const githubService = githubServiceFactory()
     const user = await githubService.getUser(username)
+    console.log('user', user)
     setGithubUsers([user])
   }
 
   const searchUsers = async (username: string) => {
-    const githubService = githubServiceFactory()
-    const usersPage = await githubService.getUsers(username)
-    setGithubUsers(usersPage.users)
+    try {
+      const githubService = githubServiceFactory()
+      const usersPage = await githubService.getUsers(username)
+      console.log('usersPage', usersPage)
+      setGithubUsers(usersPage.users)
+    } catch (error) {
+      console.log('error', error)
+    }
   }
-
-  const selectUser = () => {}
 
   return (
     <S.Wrapper>
