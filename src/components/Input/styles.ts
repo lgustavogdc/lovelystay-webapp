@@ -2,13 +2,17 @@ import styled, { css } from 'styled-components'
 
 export const InputWrapper = styled.div.attrs({
   'data-testid': 'InputWrapper',
-})``
+})`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 export const Input = styled.input.attrs({
   'data-testid': 'Input',
 })<{ hasError: boolean }>`
   padding: 0.5em;
-  width: 300px;
+  width: 400px;
   margin: 0.5em;
   color: #878f9a;
   background: #0d1117;
