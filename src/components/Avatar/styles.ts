@@ -10,8 +10,8 @@ export const Avatar = styled.img.attrs({
     ${customStyle &&
     customStyle === 'small' &&
     css`
-      height: 20px;
-      width: 20px;
+      height: 40px;
+      width: 40px;
     `}
 
     ${customStyle &&
