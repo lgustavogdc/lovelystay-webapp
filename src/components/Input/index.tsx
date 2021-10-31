@@ -13,8 +13,9 @@ const Input = ({ name, placeholder, initialValue, error, onChange }: InputProps)
   const [value, setValue] = useState(initialValue)
 
   return (
-    <S.InputWrapper hasError={!!error}>
+    <S.InputWrapper>
       <S.Input
+        hasError={!!error}
         name={name}
         placeholder={placeholder}
         value={value}
@@ -23,7 +24,7 @@ const Input = ({ name, placeholder, initialValue, error, onChange }: InputProps)
           onChange && onChange(event.target.value)
         }}
       />
-      {error && <S.ErrorWrapper>{error}</S.ErrorWrapper>}
+      {error && <S.ErrorWrapper hasError={!!error}>{error}</S.ErrorWrapper>}
     </S.InputWrapper>
   )
 }
