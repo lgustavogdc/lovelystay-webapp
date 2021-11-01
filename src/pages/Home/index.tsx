@@ -10,12 +10,8 @@ const Home = () => {
   const [githubUsers, setGithubUsers] = useState<GithubUser[]>([])
   const history = useHistory()
 
-  const navigate = (route: string) => {
+  const selectUser = (route: string) => {
     history.push(route)
-  }
-
-  const selectUser = () => {
-    navigate('/user')
   }
 
   const searchUser = async (username: string) => {
