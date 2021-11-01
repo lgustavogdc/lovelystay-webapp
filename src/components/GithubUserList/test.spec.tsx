@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import GithubUserList, { GithubUserListProps } from '.'
 
 const mockedGithubUserListProps: GithubUserListProps = {
-  users: [{ id: 1, login: 'anyLogin', name: 'anyName', avatar_url: 'anyUrl' }],
+  users: [{ id: 1, login: 'anyLogin', avatar_url: 'anyUrl' }],
   onSelectUser: jest.fn(),
 }
 describe('<GithubUserList />', () => {
@@ -18,7 +18,7 @@ describe('<GithubUserList />', () => {
   it('should call onSelectUser after clicking component', () => {
     const mockedOnSelectUser = jest.fn()
     render(<GithubUserList {...mockedGithubUserListProps} onSelectUser={mockedOnSelectUser} />)
-    const user = screen.getByText('anyName').parentElement!
+    const user = screen.getByText('anyLogin').parentElement!
 
     userEvent.click(user)
 

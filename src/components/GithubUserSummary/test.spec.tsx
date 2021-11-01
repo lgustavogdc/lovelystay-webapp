@@ -30,12 +30,4 @@ describe('<GithubUserListItem />', () => {
 
     expect(avatar).toBeInTheDocument()
   })
-
-  it('should render name if name prop is passed', () => {
-    const mockedName = 'anyName'
-    render(<GithubUserSummary {...mockedGithubUserSummaryProps} name={mockedName} />)
-    const name = screen.getByTestId('GithubUserSummarySubtitle')
-
-    expect(name).toBeInTheDocument()
-  })
 })
