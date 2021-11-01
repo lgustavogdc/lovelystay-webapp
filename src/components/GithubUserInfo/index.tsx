@@ -6,7 +6,7 @@ export type GithubUserInfoProps = {
   avatar?: string
   name: string
   username: string
-  totalRepositories: number
+  totalRepositories: number | null
 }
 
 const GithubUserInfo = ({ avatar, name, username, totalRepositories }: GithubUserInfoProps) => (

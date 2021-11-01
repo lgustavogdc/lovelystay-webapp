@@ -1,11 +1,10 @@
 export type GithubUser = {
   login: string
-  id: number
+  id: number | null
   avatar_url: string
   html_url: string
-  repos_url: string
   name: string
   location: string
   bio: string
-  public_repos: number
+  public_repos: number | null
 }
