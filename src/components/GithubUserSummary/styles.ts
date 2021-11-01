@@ -12,6 +12,11 @@ export const Wrapper = styled.div.attrs({
   color: #005efe;
   cursor: pointer;
   width: 700px;
+
+  &:hover {
+    background-color: #4a4a59;
+    transition: 0.5s background-color;
+  }
 `
 
 export const Title = styled.h1`
