@@ -18,7 +18,7 @@ describe('<SearchGithubUserForm />', () => {
   it('should call onSearchUser function with correct value when onSearchUser button is clicked', () => {
     const mockedSearchUser = jest.fn()
     render(<SearchGithubUserForm {...mockedSearchGithubUserFormProps} onSearchUser={mockedSearchUser} />)
-    const searchUserButton = screen.getByText('Search user')
+    const searchUserButton = screen.getByText('Search specific user')
     const input = screen.getByTestId('Input')
 
     userEvent.type(input, 'anyValue')
