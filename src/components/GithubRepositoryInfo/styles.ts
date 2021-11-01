@@ -6,7 +6,8 @@ export const Wrapper = styled.div.attrs({
   border: 2px solid #30363d;
   border-radius: 10px;
   padding: 5px;
-  width: 100%;
+  min-width: 200px;
+  max-width: 350px;
   background-color: #21212d;
 `
 
