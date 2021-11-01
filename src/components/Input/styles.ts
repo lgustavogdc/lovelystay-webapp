@@ -4,6 +4,7 @@ export const InputWrapper = styled.div.attrs({
   'data-testid': 'InputWrapper',
 })`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
@@ -30,6 +31,7 @@ export const Input = styled.input.attrs({
 export const ErrorWrapper = styled.span.attrs({
   'data-testid': 'InputErrorWrapper',
 })<{ hasError: boolean }>`
+  height: 25px;
   ${({ hasError }) => css`
     ${hasError &&
     css`

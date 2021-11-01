@@ -24,7 +24,7 @@ const Input = ({ name, placeholder, initialValue, error, onChange }: InputProps)
           onChange && onChange(event.target.value)
         }}
       />
-      {error && <S.ErrorWrapper hasError={!!error}>{error}</S.ErrorWrapper>}
+      <S.ErrorWrapper hasError={!!error}>{error && error}</S.ErrorWrapper>
     </S.InputWrapper>
   )
 }
