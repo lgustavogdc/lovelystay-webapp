@@ -35,7 +35,9 @@ const Home = () => {
   return (
     <S.Wrapper>
       <SearchGithubUserForm onSearchUser={searchUser} onSearchUsers={searchUsers} />
-      <GithubUserList users={githubUsers} onSelectUser={selectUser} />
+      <S.UserListWrapper>
+        <GithubUserList users={githubUsers} onSelectUser={selectUser} />
+      </S.UserListWrapper>
     </S.Wrapper>
   )
 }

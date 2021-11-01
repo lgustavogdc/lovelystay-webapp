@@ -5,12 +5,13 @@ export const Wrapper = styled.div.attrs({
 })`
   background-color: #21212d;
   border-radius: 8px;
-  margin: 10px 0;
+  margin: 15px 0;
   display: flex;
   align-items: center;
   padding: 5px 10px;
   color: #005efe;
   cursor: pointer;
+  width: 700px;
 `
 
 export const Title = styled.h1`
