@@ -50,9 +50,9 @@ const Home = () => {
     <S.Wrapper>
       <SearchGithubUserForm onSearchUser={searchUser} onSearchUsers={searchUsers} error={errorMessage} />
       {isLoading ? (
-        <S.UserListWrapper>
+        <S.LoadingWrapper>
           <Loading />
-        </S.UserListWrapper>
+        </S.LoadingWrapper>
       ) : (
         <S.UserListWrapper>
           <GithubUserList users={githubUsers} onSelectUser={selectUser} />
