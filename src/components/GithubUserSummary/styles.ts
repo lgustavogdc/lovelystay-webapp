@@ -19,11 +19,3 @@ export const Title = styled.h1`
   margin-left: 10px;
   font-size: 20px;
 `
-
-export const Subtitle = styled.h2.attrs({
-  'data-testid': 'GithubUserSummarySubtitle',
-})`
-  margin: 0;
-  margin-left: 10px;
-  font-size: 18px;
-`

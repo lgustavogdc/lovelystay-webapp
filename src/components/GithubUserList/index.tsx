@@ -3,7 +3,7 @@ import GithubUserSummary from '../GithubUserSummary'
 import List from '../List'
 
 export type GithubUserListProps = {
-  users: Array<Pick<GithubUser, 'id' | 'login' | 'name' | 'avatar_url'>>
+  users: Array<Pick<GithubUser, 'id' | 'login' | 'avatar_url'>>
   onSelectUser: (route: string) => void
 }
 
@@ -13,7 +13,6 @@ const GithubUserList = ({ users, onSelectUser }: GithubUserListProps) => (
       <GithubUserSummary
         key={user.id}
         username={user.login}
-        name={user.name}
         avatar={user.avatar_url}
         onClick={() => onSelectUser(`user/${user.login}`)}
       />
