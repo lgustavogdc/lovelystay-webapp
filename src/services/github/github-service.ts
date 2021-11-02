@@ -12,11 +12,11 @@ type GithubHttpGetResponse = {
 export class GithubService implements GetGithubUsers, GetGithubUser, GetGithubUserRepositories {
   constructor(private readonly httpService: HttpGet) {}
 
-  async getUsers(username: string): Promise<GetGithubUsers.Response> {
+  async getUsers(username: string, page = 1): Promise<GetGithubUsers.Response> {
     const queryFilter = `${username} in:login`
     const response = await this.httpService.get<GithubHttpGetResponse>({
       url: '/search/users',
-      params: { q: queryFilter },
+      params: { q: queryFilter, page },
     })
 
     return { users: response.body.items, total: response.body.total_count }
@@ -27,8 +27,8 @@ export class GithubService implements GetGithubUsers, GetGithubUser, GetGithubUs
     return response.body
   }
 
-  async getGithubUserRepositories(url: string): Promise<Repository[]> {
-    const response = await this.httpService.get<Repository[]>({ url })
+  async getGithubUserRepositories(url: string, page = 1): Promise<Repository[]> {
+    const response = await this.httpService.get<Repository[]>({ url, params: { page } })
     return response.body
   }
 }
