@@ -23,9 +23,10 @@ Thanks Lovelystay for the oportunity!
 
 ## ✅ Features
 
-- [x] Searching and Listing Github Users
-- [x] Github users and repositories Pagination
-- [x] See github user specific info
+- [x] Listing Github Users (Required)
+- [x] See github user specific info (Required)
+- [x] Searching Github Users (Additional)
+- [x] Github users and repositories Pagination (Additional)
 
 ## Intalling and Starting the project
 
@@ -34,10 +35,6 @@ Npmis a dependecy of this project, please proceed this tutorial to install it:
 ### https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 if you already have npm, clone the project with:
-
-### `git clone git@github.com:lgustavogdc/lovelystay-webapp.git`
-
-### or
 
 ### `git clone https://github.com/lgustavogdc/lovelystay-webapp.git`
 
