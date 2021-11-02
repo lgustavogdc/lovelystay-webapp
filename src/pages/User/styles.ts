@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.main.attrs({
-  'data-testid': 'UserWrapper',
-})``
+export const Wrapper = styled.main``
 
 export const InfoWrapper = styled.div`
   margin-top: 20px;
