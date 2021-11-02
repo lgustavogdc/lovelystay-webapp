@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# React Frontend Challenge Using GithubApi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ✅ Description
 
-## Available Scripts
+This challenge was proposed by the company LovelyStay.
 
-In the project directory, you can run:
+It was made using Create-react-app, Typescript, Styled-components, Jest, Axios and a component from Material UI.
 
-### `yarn start`
+I also decided to include an option to search several users instead of just one.
+The reason for that is making the project feel more complete while still corresponding to what was asked.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Thanks Lovelystay for the oportunity!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Note: Only unit tests are being made, I did not do any integration or end-to-end tests**
 
-### `yarn test`
+# Sobre o projeto e desenvolvimento
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Aplicação web construida em React JS e Redux para gerenciamento de estado. A ideia da aplicação é uma biblioteca virtual.
+Procurei tornar-la extremamente responsiva, respeitando todas proporções contidas no mockup.
+Obrigado Ioasys pela oportunidade :)
 
-### `yarn build`
+## ✅ Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Searching and Listing Github Users
+- [x] Github users and repositories Pagination
+- [x] See github user specific info
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Intalling and Starting the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Npmis a dependecy of this project, please proceed this tutorial to install it:
 
-### `yarn eject`
+### https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+if you already have npm, clone the project with:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `git clone git@github.com:lgustavogdc/lovelystay-webapp.git`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### or
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `git clone https://github.com/lgustavogdc/lovelystay-webapp.git`
 
-## Learn More
+After cloning the project, open the terminal and type:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm install`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+After installing the npm modules, simply type in the terminal:
+
+### `npm start`
+
+And it should work!
