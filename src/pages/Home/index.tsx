@@ -22,7 +22,7 @@ const Home = () => {
       setIsLoading(true)
       const githubService = githubServiceFactory()
       const user = await githubService.getUser(username)
-      setGithubUsers([user])
+      if (user) selectUser(`user/${user.login}`)
     } catch (error: any) {
       console.error(error)
       setErrorMessage(error.toString())
@@ -36,7 +36,7 @@ const Home = () => {
       setIsLoading(true)
       const githubService = githubServiceFactory()
       const usersPage = await githubService.getUsers(username)
-      setGithubUsers(usersPage.users)
+      if (usersPage) setGithubUsers(usersPage.users)
       if (errorMessage) setErrorMessage('')
     } catch (error: any) {
       console.error(error)
