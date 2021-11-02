@@ -31,4 +31,11 @@ describe('<Button />', () => {
     expect(button).toHaveStyleRule('color', '#2c5fbc')
     expect(button).toHaveStyleRule('background-color', '#222a3f')
   })
+
+  it('should be disabled when passing disabled prop', () => {
+    render(<Button {...buttonMockedProps} disabled={true} />)
+    const button = screen.getByTestId('Button')
+
+    expect(button).toBeDisabled()
+  })
 })
