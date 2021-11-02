@@ -23,7 +23,7 @@ const User = () => {
 
   useEffect(() => {
     try {
-      if (!user) setIsLoading(true)
+      if (!user.login) setIsLoading(true)
       const githubService = createGithubService()
       const getUser = async () => {
         const specificUser = await githubService.getUser(username)
@@ -33,16 +33,16 @@ const User = () => {
       const getRepositories = async () => {
         const repositories = await githubService.getGithubUserRepositories(`/users/${username}/repos`, currentPage)
         setUserRepositories(repositories)
-        if (!user) setIsLoading(false)
+        if (!user.login) setIsLoading(false)
       }
 
-      if (!user) getUser()
+      if (!user.login) getUser()
       getRepositories()
     } catch (error) {
       console.log(error)
       setIsLoading(false)
     }
-  }, [username, currentPage, user])
+  }, [username, currentPage, user.login])
 
   const selectPage = (page: number) => {
     setCurrentPage(page)
