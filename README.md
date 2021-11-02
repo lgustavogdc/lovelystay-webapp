@@ -4,14 +4,22 @@
 
 This challenge was proposed by the company LovelyStay.
 
-It was made using Create-react-app, Typescript, Styled-components, Jest, Axios and a component from Material UI.
-
 I also decided to include an option to search several users instead of just one.
 The reason for that is making the project feel more complete while still corresponding to what was asked.
 
 Thanks Lovelystay for the oportunity!
 
 **Note: Only unit tests are being made, I did not do any integration or end-to-end tests**
+
+# 🛠 Technologies
+
+- [ReactJS](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Axios](https://github.com/axios/axios)
+- [Styled Components](https://styled-components.com/)
+- [Create React APP](https://create-react-app.dev/)
+- [Material UI](https://mui.com)
+- [React Icons](https://react-icons.github.io/react-icons/)
 
 ## ✅ Features
 
