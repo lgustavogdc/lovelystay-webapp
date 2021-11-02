@@ -19,8 +19,8 @@ export const PagePosition = styled.span<{ disabled?: boolean }>`
     ${!disabled &&
     css`
       &:hover {
-        background-color: #4a4a59;
-        transition: 0.5s background-color;
+        color: #005efe;
+        transition: 0.5s color;
       }
     `}
 
