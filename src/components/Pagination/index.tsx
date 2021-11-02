@@ -24,7 +24,7 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onChangePage }: Pag
   }, [currentPage, itemsPerPage, totalItems])
 
   return (
-    <S.Wrapper>
+    <S.Wrapper data-testid="PaginationWrapper">
       <Button
         disabled={currentPagePosition === 'firstPage'}
         customStyle="small"
@@ -33,18 +33,34 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onChangePage }: Pag
         <AiFillCaretLeft size="15" />
       </Button>
       {currentPagePosition === 'middlePage' ? (
-        <S.Wrapper data-testId="MiddlePagePositionWrapper">
-          <S.PagePosition onClick={() => onChangePage(1)}>1</S.PagePosition>..
-          <S.PagePosition disabled>{currentPage}</S.PagePosition> ..
-          <S.PagePosition onClick={() => onChangePage(lastPage!)}>{lastPage}</S.PagePosition>
+        <S.Wrapper data-testid="MiddlePagePositionWrapper">
+          <S.PagePosition onClick={() => onChangePage(1)} data-testid="FirstPagePosition">
+            1
+          </S.PagePosition>
+          ..
+          <S.PagePosition disabled data-testid="MiddlePagePosition">
+            {currentPage}
+          </S.PagePosition>{' '}
+          ..
+          <S.PagePosition onClick={() => onChangePage(lastPage!)} data-testid="LastPagePosition">
+            {lastPage}
+          </S.PagePosition>
         </S.Wrapper>
       ) : (
-        <S.Wrapper data-testId="EdgePagePositionWrapper">
-          <S.PagePosition disabled={currentPagePosition === 'firstPage'} onClick={() => onChangePage(1)}>
+        <S.Wrapper data-testid="EdgePagePositionWrapper">
+          <S.PagePosition
+            disabled={currentPagePosition === 'firstPage'}
+            data-testid="FirstPagePosition"
+            onClick={() => onChangePage(1)}
+          >
             1
           </S.PagePosition>
           ....
-          <S.PagePosition disabled={currentPagePosition === 'lastPage'} onClick={() => onChangePage(lastPage!)}>
+          <S.PagePosition
+            disabled={currentPagePosition === 'lastPage'}
+            data-testid="LastPagePosition"
+            onClick={() => onChangePage(lastPage!)}
+          >
             {lastPage}
           </S.PagePosition>
         </S.Wrapper>
