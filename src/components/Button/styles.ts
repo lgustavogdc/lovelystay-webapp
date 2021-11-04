@@ -10,18 +10,28 @@ export const Button = styled.button.attrs({
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  max-width: 145px;
+  max-height: 40px;
+
+  &:hover {
+    background-color: #4d8ff9;
+    border: 2px solid #4d8ff9;
+    transition: 0.5s background-color, 0.5s border;
+  }
 
   ${({ customStyle }) => css`
     ${customStyle === 'primary' &&
     css`
       color: #fff;
       background-color: #005efe;
+      border: 2px solid #005efe;
     `}
 
     ${customStyle === 'secondary' &&
     css`
-      color: #2c5fbc;
-      background-color: #222a3f;
+      color: #fff;
+      background-color: #17171f;
+      border: 2px solid #2c5fbc;
     `}
 
     ${customStyle === 'small' &&

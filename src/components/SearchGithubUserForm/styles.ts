@@ -13,7 +13,7 @@ export const Wrapper = styled.div.attrs({
 
 export const ButtonsWrapper = styled.div`
   margin-top: 10px;
-  width: 250px;
+  width: 270px;
   display: flex;
   justify-content: space-between;
   align-items: center;
