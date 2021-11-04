@@ -23,7 +23,7 @@ const Home = () => {
   const [totalItems, setTotalItems] = useState<number>()
   const history = useHistory()
 
-  const selectUser = (route: string) => {
+  const navigateToUser = (route: string) => {
     history.push(route)
   }
 
@@ -65,11 +65,10 @@ const Home = () => {
       setIsLoading(true)
       const githubService = githubServiceFactory()
       const user = await githubService.getUser(username)
-      if (user) selectUser(`user/${user.login}`)
+      if (user) navigateToUser(`user/${user.login}`)
     } catch (error: any) {
       console.error(error)
       setErrorMessage(error.toString())
-    } finally {
       setIsLoading(false)
     }
   }
@@ -88,7 +87,7 @@ const Home = () => {
         </S.LoadingWrapper>
       ) : (
         <S.UserListWrapper>
-          <GithubUserList users={githubUsers.users} onSelectUser={selectUser} />
+          <GithubUserList users={githubUsers.users} onSelectUser={navigateToUser} />
         </S.UserListWrapper>
       )}
       {!isLoading && totalItems && (
