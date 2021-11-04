@@ -7,9 +7,10 @@ import { createGithubService } from 'src/services'
 import Loading from 'src/components/Loading'
 import * as S from './styles'
 import Pagination from 'src/components/Pagination'
+import { useParams } from 'react-router'
 
 const User = () => {
-  const username = window.location.pathname.replace('/user/', '')
+  const { login: username } = useParams<{ login: string }>()
   const [isLoading, setIsLoading] = useState(false)
   const [userRepositories, setUserRepositories] = useState<Repository[]>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
