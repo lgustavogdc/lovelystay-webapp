@@ -7,13 +7,15 @@ export const InputWrapper = styled.div.attrs({
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
+  width: 100%;
 `
 
 export const Input = styled.input.attrs({
   'data-testid': 'Input',
 })<{ hasError: boolean }>`
   padding: 0.5em;
-  width: 400px;
+  width: 100%;
   margin: 0.5em;
   color: #878f9a;
   background: #0d1117;

@@ -5,6 +5,13 @@ export const Wrapper = styled.div.attrs({
   'data-testid': 'ListWrapper',
 })<{ customStyle: CustomStyle }>`
   ${({ customStyle }) => css`
+    ${customStyle === 'lines' &&
+    css`
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    `}
     ${customStyle === 'grid' &&
     css`
       display: grid;

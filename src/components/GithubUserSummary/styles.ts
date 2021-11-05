@@ -5,13 +5,14 @@ export const Wrapper = styled.div.attrs({
 })`
   background-color: #21212d;
   border-radius: 8px;
-  margin: 15px 0;
+  margin: 8px 0;
   display: flex;
   align-items: center;
   padding: 5px 10px;
   color: #005efe;
   cursor: pointer;
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
 
   &:hover {
     background-color: #4a4a59;
@@ -23,4 +24,8 @@ export const Title = styled.h1`
   margin: 0;
   margin-left: 10px;
   font-size: 20px;
+
+  @media (max-width: 375px) {
+    font-size: 18px;
+  }
 `
