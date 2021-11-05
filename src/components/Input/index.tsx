@@ -4,14 +4,12 @@ import * as S from './styles'
 export type InputProps = {
   name?: string
   placeholder?: string
-  initialValue?: string
+  value?: string
   error?: string
   onChange?: (value: string) => void
 }
 
-const Input = ({ name, placeholder, initialValue, error, onChange }: InputProps) => {
-  const [value, setValue] = useState(initialValue)
-
+const Input = ({ name, placeholder, value, error, onChange }: InputProps) => {
   return (
     <S.InputWrapper>
       <S.Input
@@ -20,7 +18,6 @@ const Input = ({ name, placeholder, initialValue, error, onChange }: InputProps)
         placeholder={placeholder}
         value={value}
         onChange={(event) => {
-          setValue(event.target.value)
           onChange && onChange(event.target.value)
         }}
       />

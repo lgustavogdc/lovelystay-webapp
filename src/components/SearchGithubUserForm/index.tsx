@@ -13,7 +13,7 @@ const SearchGithubUserForm = ({ onSearchUser, onSearchUsers, error }: SearchGith
 
   return (
     <S.Wrapper>
-      <Input placeholder="Search..." onChange={(value) => setUserName(value)} error={error} initialValue="" />
+      <Input placeholder="Search..." onChange={(value) => setUserName(value)} error={error} value={username} />
       <S.ButtonsWrapper>
         <S.SearchUsersButton onClick={() => onSearchUsers(username)}>Search users</S.SearchUsersButton>
         <S.SearchUserButton onClick={() => onSearchUser(username)}>Search specific user</S.SearchUserButton>
