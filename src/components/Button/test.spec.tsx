@@ -28,8 +28,8 @@ describe('<Button />', () => {
     render(<Button {...buttonMockedProps} customStyle="secondary" />)
     const button = screen.getByTestId('Button')
 
-    expect(button).toHaveStyleRule('color', '#2c5fbc')
-    expect(button).toHaveStyleRule('background-color', '#222a3f')
+    expect(button).toHaveStyleRule('border', '2px solid #2c5fbc')
+    expect(button).toHaveStyleRule('background-color', '#17171f')
   })
 
   it('should be disabled when passing disabled prop', () => {
