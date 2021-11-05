@@ -8,15 +8,9 @@ import { githubServiceFactory } from 'src/services/factories/github-service-fact
 import Loading from 'src/components/Loading'
 import Pagination from 'src/components/Pagination'
 
-type GithubUsersListType = {
-  searchedName: string
-  users: Array<GithubUser>
-}
 const Home = () => {
-  const [githubUsers, setGithubUsers] = useState<GithubUsersListType>({
-    searchedName: '',
-    users: [],
-  })
+  const [githubUsers, setGithubUsers] = useState<GithubUser[]>([])
+  const [searchedName, setSearchedName] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -27,13 +21,18 @@ const Home = () => {
     history.push(route)
   }
 
+  const getUsers = async (username: string, page: number) => {
+    const githubService = githubServiceFactory()
+    const usersPage = await githubService.getUsers(username, page)
+    if (usersPage) setGithubUsers(usersPage.users)
+    if (errorMessage) setErrorMessage('')
+    return usersPage
+  }
+
   const selectPage = async (page: number) => {
     setCurrentPage(page)
     try {
-      const githubService = githubServiceFactory()
-      const usersPage = await githubService.getUsers(githubUsers.searchedName, page)
-      setGithubUsers((oldState) => ({ ...oldState, users: usersPage.users }))
-      if (errorMessage) setErrorMessage('')
+      await getUsers(searchedName, page)
     } catch (error: any) {
       console.error(error)
       setErrorMessage(error.toString())
@@ -43,15 +42,12 @@ const Home = () => {
   const searchUsers = async (username: string) => {
     try {
       setIsLoading(true)
-      const githubService = githubServiceFactory()
-      const usersPage = await githubService.getUsers(username, currentPage)
+      const usersPage = await getUsers(username, currentPage)
       if (usersPage) {
-        setGithubUsers({ searchedName: username, users: usersPage.users })
-
+        setSearchedName(username)
         if (usersPage.total >= 1000) setTotalItems(1000)
         else setTotalItems(usersPage.total)
       }
-      if (errorMessage) setErrorMessage('')
     } catch (error: any) {
       console.error(error)
       setErrorMessage(error.toString())
@@ -87,7 +83,7 @@ const Home = () => {
         </S.LoadingWrapper>
       ) : (
         <S.UserListWrapper>
-          <GithubUserList users={githubUsers.users} onSelectUser={navigateToUser} />
+          <GithubUserList users={githubUsers} onSelectUser={navigateToUser} />
         </S.UserListWrapper>
       )}
       {!isLoading && totalItems && (
