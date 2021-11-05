@@ -17,6 +17,11 @@ export const Wrapper = styled.div.attrs({
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px 30px;
+
+      @media (max-width: 375px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5px 15px;
+      }
     `}
   `}
 `
