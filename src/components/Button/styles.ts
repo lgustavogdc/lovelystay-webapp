@@ -10,7 +10,7 @@ export const Button = styled.button.attrs({
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  max-width: 145px;
+  max-width: 155px;
   max-height: 40px;
 
   &:hover {
